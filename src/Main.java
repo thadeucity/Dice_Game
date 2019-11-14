@@ -1,6 +1,4 @@
-import java.util.List;
 import java.util.Scanner;
-import java.awt.*;
 
 public class Main {
 
@@ -14,7 +12,7 @@ public class Main {
         Dice d1 = new Dice();
         Dice d2 = new Dice();
 
-        while (validInput == false){
+        while (!validInput){
             System.out.println("Want to play a dice game? (y/n) ");
             userInput = sc.next();
             if (userInput.equals("y")){
@@ -29,7 +27,7 @@ public class Main {
             }
         }
 
-        while (playing == true){
+        while (playing){
 
             validInput = false;
 
@@ -39,13 +37,13 @@ public class Main {
             System.out.print("\n" + d1.showResult());
             System.out.println("\n" + d2.showResult() + "\n");
 
-            if (d1.showResult() == d2.showResult()){
+            if (d1.showResult().equals(d2.showResult())){
                 System.out.println("YOU WON! Want to play again? (y/n) ");
             } else {
                 System.out.println("YOU LOST! Want to try again? (y/n) ");
             }
 
-            while (validInput == false){
+            while (!validInput){
                 userInput = sc.next();
                 if (userInput.equals("y")){
                     validInput=true;
